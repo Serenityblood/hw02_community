@@ -86,3 +86,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 POSTS_COUNT = 10
+
+TEXT_SIZE_NUMBER = 30

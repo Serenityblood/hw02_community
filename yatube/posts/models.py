@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.db import models
 
@@ -32,3 +33,8 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-pub_date']
+        verbose_name = 'post'
+        verbose_name_plural = 'posts'
+
+    def __str__(self) -> str:
+        return self.text[:settings.TEXT_SIZE_NUMBER]
