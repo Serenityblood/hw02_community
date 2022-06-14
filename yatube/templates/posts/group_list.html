@@ -4,10 +4,10 @@
 {% endblock  %}
 {% block content %}
   <div class="container py-5">
-    <h1>{{ group.description|linebreaks }}</h1>
-    <p>
+    <h1>
       Группа {{ group.title }}
-    </p>
+    </h1>
+    <p>{{ group.description|linebreaks }}</p>
     {% for post in posts %}
       <article>
         <ul>
@@ -18,7 +18,7 @@
             Дата публикации: {{ post.pub_date|date:"d E Y" }}
           </li>
         </ul>      
-        <p> {{ post.text|safe }}</p>
+        <p> {{ post.text|linebreaks }}</p>
         {% if not forloop.last %}<hr>{% endif %}
       </article>
     {% endfor %}
