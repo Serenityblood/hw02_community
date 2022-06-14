@@ -4,11 +4,11 @@
 {% endblock  %}
 {% block content %}
   <div class="container py-5">
-    <h1>{{ group.description }}</h1>
+    <h1>{{ group.description|linebreaks }}</h1>
     <p>
       Группа {{ group.title }}
     </p>
-      {% for post in posts %}
+    {% for post in posts %}
       <article>
         <ul>
           <li>
@@ -21,6 +21,6 @@
         <p> {{ post.text|safe }}</p>
         {% if not forloop.last %}<hr>{% endif %}
       </article>
-      {% endfor %}
+    {% endfor %}
   </div>         
 {% endblock %}

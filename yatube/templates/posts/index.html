@@ -17,7 +17,9 @@
         </ul>
         <p>{{ post.text }}</p>    
         {% if post.group %}   
-          <text>Записи группы </text><a href="{% url 'posts:group_posts_page' post.group.slug %}">{{ post.group.title }}</a>
+          <a href="{% url 'posts:group_posts_page' post.group.slug %}">#Группа {{ post.group.title }}</a>
+        {% else %}
+          <span style='color: red'>Этой публикации нет ни в одном сообществе.</span>
         {% endif %}
         {% if not forloop.last %}<hr>{% endif %}
       </article>
