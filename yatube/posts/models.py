@@ -8,6 +8,7 @@ User = get_user_model()
 
 class Group(models.Model):
     title = models.CharField(
+        'Название',
         max_length=200,
     )
     slug = models.SlugField(
@@ -26,7 +27,7 @@ class Group(models.Model):
 
 
 class Post(models.Model):
-    text = models.TextField()
+    text = models.TextField(verbose_name='Текст')
     pub_date = models.DateTimeField(
         auto_now_add=True,
         verbose_name='Дата публикации'
