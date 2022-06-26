@@ -9,6 +9,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
+    'about.apps.AboutConfig',
     'users.apps.UsersConfig',
     'posts.apps.PostsConfig',
     'core.apps.CoreConfig',
@@ -93,6 +94,8 @@ TEXT_SIZE_NUMBER = 30
 LOGIN_URL = 'users:login'
 
 LOGIN_REDIRECT_URL = 'posts:main_page'
+
+LOGOUT_REDIRECT_URL = 'posts:main_page'
 
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 
