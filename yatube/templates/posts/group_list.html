@@ -8,7 +8,7 @@
       Группа {{ group.title }}
     </h1>
     <p>{{ group.description|linebreaks }}</p>
-    {% for post in posts %}
+    {% for post in page_obj %}
       <article>
         <ul>
           <li>
@@ -22,5 +22,6 @@
         {% if not forloop.last %}<hr>{% endif %}
       </article>
     {% endfor %}
-  </div>         
+  </div>
+  {% include 'posts/includes/paginator.html' %}   
 {% endblock %}
